@@ -23,6 +23,10 @@ public class MemberVO {
     private LocalDateTime member_date;
     private long board_id;
     private long reply_id;
+    private long modifier_id;
+    private long register_id;
+    private long modifier_datetime;
+    private long register_datetime;
 
     public MemberVO(long member_id, String member_name, String member_email, String member_nickname, String member_pass, String member_phone, String member_postcode, String member_address, String member_email_auth, String member_del, LocalDateTime member_date, long board_id, long reply_id) {
         this.member_id = member_id;
