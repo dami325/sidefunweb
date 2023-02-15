@@ -1,10 +1,9 @@
 package com.study.sidefunweb.domain;
 
-import com.study.sidefunweb.util.Grade;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
 
@@ -12,19 +11,31 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString
-public class Member {
+public class Member extends BaseEntity {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
+    @Column(name = "member_id")
     private Long id;
 
-    private String name;
-    private int age;
-    @Enumerated(EnumType.STRING)
-    private Grade grade;
+    @Comment("")
+    private String member_email;
+    private String member_nicname;
+    private String member_pass;
+    private String member_phone;
+    private String member_postcode;
+    private String member_address;
+    private String member_email_auth;
+    private String member_del;
+    private String member_date;
+    private String member_name;
 
-    public Member(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "board_id")
+    private Board board;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Reply reply;
+
+
 }
