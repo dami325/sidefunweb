@@ -28,4 +28,6 @@ public class Board extends BaseEntity{
     private String board_content;
     private LocalDateTime board_date;
     private LocalDateTime board_update;
+
+
 }

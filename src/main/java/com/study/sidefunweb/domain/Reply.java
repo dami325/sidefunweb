@@ -1,4 +1,7 @@
-package com.study.sidefunweb.domain;
-
-public class Reply {
-}
+//package com.study.sidefunweb.domain;
+//
+//import javax.persistence.Entity;
+//
+//@Entity
+//public class Reply {
+//}

@@ -3,6 +3,7 @@ package com.study.sidefunweb.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@ToString
 public class Member extends BaseEntity {
 
     @Id
@@ -34,8 +36,13 @@ public class Member extends BaseEntity {
     @JoinColumn(name = "board_id")
     private Board board;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Reply reply;
+    public Member (String name) {
+        this.member_name = name;
+    }
+
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Reply reply;
 
 
 }
